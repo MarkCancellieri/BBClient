@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{siteName}} - {{pageName}}</title>
+  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+{{!-- Main site navigation bar --}}
+{{> server.views.partials.main-nav }}
+
+{{!-- Main body --}}
+<div class="container">
+  {{{body}}}
+</div>
+
+{{!-- Footer --}}
+{{> server.views.partials.main-footer }}
+
+{{!-- JavaScript --}}
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
