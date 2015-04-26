@@ -1,0 +1,22 @@
+{{!-- Pagination --}}
+<nav>
+  <div class="text-center">
+    <ul class="pagination pagination-lg">
+      <li>
+        <a href="{{{previousLink}}}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      {{#each pageLinks }}
+        <li class="{{pageClass}}">
+          <a href="{{pageLink}}">{{pageNumber}}</a>
+        </li>
+      {{/each}}
+      <li>
+        <a href="{{{nextLink}}}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

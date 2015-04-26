@@ -34,6 +34,10 @@ function configureExpressApp() {
   }));
   // app.use(middleware.csurf()) TODO: figure out how to use this!
   app.use(middleware.flash());
+  app.use(middleware.paginate.middleware(
+    config.paginateDefaultLimit,            // Default results per page
+    config.paginateMaxLimit                 // Maximum results per page
+  ));
 
   // Load routes
   app.use('/', require('../../app_server/routes/server.routes.index.js'));

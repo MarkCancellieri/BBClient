@@ -7,6 +7,7 @@ module.exports = {
   flash:          require('connect-flash'),
   logger:         require('morgan'),
   methodOverride: require('method-override'),
+  paginate:       require('express-paginate'),
   serveFavicon:   require('serve-favicon'),
   session:        require('express-session'),
   _404:           require('../../lib/middleware/lib.middleware.404'),

@@ -19,11 +19,12 @@
     "compression": "1.4.3",
     "connect-flash": "0.1.1",
     "csurf": "1.8.0",
-    "express-session": "1.11.1",
-    "method-override": "2.3.2",
-    "serve-favicon": "2.2.0",
     "express": "4.12.3",
     "express-handlebars": "2.0.1",
-    "morgan": "1.5.2"
+    "express-paginate": "0.0.8",
+    "express-session": "1.11.1",
+    "method-override": "2.3.2",
+    "morgan": "1.5.2",
+    "serve-favicon": "2.2.0"
   }
 }
