@@ -25,7 +25,7 @@ var getPageLinks = function(req, res, page, limit, boardsData) {
   for (var i = 1; i <= boardsData.pageCount; i++) {
     pageLinks[i-1] = {};
     pageLinks[i-1].pageNumber = i;
-    pageLinks[i-1].pageLink = '/?page=' + i + '&limit=' + limit;
+    pageLinks[i-1].pageLink = req.path + '?page=' + i + '&limit=' + limit;
     if (page === i) {
       pageLinks[i-1].pageClass = 'active';
     }
@@ -40,6 +40,7 @@ var getListOfBoards = function(req, res){
   var limit = parseInt(req.query.limit);
   var boardsData = getBoards(page, limit);
   var pageLinks = getPageLinks(req, res, page, limit, boardsData);
+
   if (res.locals.paginate.hasPreviousPages) {
     var previousLink = res.locals.paginate.href(true);
   }

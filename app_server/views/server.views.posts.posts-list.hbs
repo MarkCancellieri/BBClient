@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="row">
+      <h3 class="text-center">{{pageHeader.title}}</h3>
+      {{#each posts}}
+        <div class="list-group">
+          <div class="col-xs-12 list-group-item">
+            <h4>
+              <span class="col-xs-12 col-sm-12 col-lg-6">
+                <a href="/posts/{{_id}}/{{subject}}">{{subject}}</a>
+              </span>
+              <span class="col-xs-12 col-sm-6 col-lg-3 author">
+                Author: {{author.fullName}}
+              </span>
+              <span class="col-xs-12 col-sm-6 col-lg-3">
+                Posted: {{formatDate created "%B %e, %Y %-l:%M%p"}}
+              </span>
+            </h4>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+{{!-- Pagination --}}
+{{> server.views.partials.pagination }}
