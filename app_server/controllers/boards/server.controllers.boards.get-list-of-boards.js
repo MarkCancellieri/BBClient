@@ -1,24 +1,11 @@
 'use strict';
 
 // Module dependencies
-var boardsList = require('../../../app_api/boards-list');
+var request     = require('request');
+var config      = require('../../../config/config');
 
-var getBoards = function(page, limit) {
-  var results = boardsList.length;
-  var pageCount = Math.ceil(results / limit);
-
-  // Set page to last page if greater than total number of pages
-  page = (page > pageCount) ? pageCount : page;
-
-  var startIndex = (page - 1) * limit;
-  var endIndex = (page - 1) * limit + limit;
-  var boardsData = {};
-
-  boardsData.pageCount = pageCount;
-  boardsData.boards = boardsList.slice(startIndex, endIndex);
-
-  return boardsData;
-};
+// API options object - e.g. {server: 'http://localhost:4242'}
+var apiOptions  = config.apiOptions;
 
 var getPageLinks = function(req, res, page, limit, boardsData) {
   var pageLinks = [];
@@ -34,26 +21,44 @@ var getPageLinks = function(req, res, page, limit, boardsData) {
   return pageLinks;
 };
 
-// Get a list of boards
-var getListOfBoards = function(req, res){
-  var page = parseInt(req.query.page);
+var getListOfBoards = function(req, res, next){
+  var page  = parseInt(req.query.page);
   var limit = parseInt(req.query.limit);
-  var boardsData = getBoards(page, limit);
-  var pageLinks = getPageLinks(req, res, page, limit, boardsData);
+  var path = '/api/boards';
+  var requestOptions = {
+    url: apiOptions.server + path,
+    method: 'GET',
+    json: {},
+    qs: {
+      page: page,
+      limit: limit
+    }
+  };
 
-  if (res.locals.paginate.hasPreviousPages) {
-    var previousLink = res.locals.paginate.href(true);
-  }
-  if (res.locals.paginate.hasNextPages(boardsData.pageCount)) {
-    var nextLink = res.locals.paginate.href(false);
-  }
+  request(requestOptions, function (err, response, body) {
+    if (err) {
+      next(err);
+    } else {
+      // Get the link to go to the previous page
+      if (res.locals.paginate.hasPreviousPages) {
+        var previousLink = res.locals.paginate.href(true);
+      }
+      // Get the link to go to the next page
+      if (res.locals.paginate.hasNextPages(body.pageCount)) {
+        var nextLink = res.locals.paginate.href(false);
+      }
+      // Get the links for the page numbers
+      var pageLinks = getPageLinks(req, res, page, limit, body);
 
-  res.render('server.views.boards.boards-list.hbs', {
-    pageName: 'Home',
-    boards: boardsData.boards,
-    previousLink: previousLink,
-    nextLink: nextLink,
-    pageLinks: pageLinks
+      res.render('server.views.boards.boards-list.hbs', {
+        pageName: 'Home',
+        boards: body.boards,
+        previousLink: previousLink,
+        nextLink: nextLink,
+        pageLinks: pageLinks,
+        userFirstName: req.user ? req.user.firstName : ''
+      });
+    }
   });
 };
 

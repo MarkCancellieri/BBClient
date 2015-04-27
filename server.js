@@ -2,7 +2,7 @@
 
 // Set environment variables if undefined
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-process.env.PORT     = process.env.PORT || 4242;
+process.env.PORT     = process.env.PORT || 3000;
 
 // Module dependencies
 var http    = require('http');

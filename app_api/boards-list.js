@@ -6,7 +6,7 @@ module.exports = [
   {_id: '104', name: 'Eagle'},
   {_id: '105', name: 'Falcon'},
   {_id: '106', name: 'Gazelle'},
-  {_id: '107', name: 'Hippopotamus'},
+  {_id: '107', name: 'Hippopotamus Appreciation Society'},
   {_id: '108', name: 'Ibis'},
   {_id: '109', name: 'Jackal'},
   {_id: '110', name: 'Kangaroo'},

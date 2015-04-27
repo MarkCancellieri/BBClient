@@ -26,6 +26,7 @@
     "handlebars-helper": "0.0.12",
     "method-override": "2.3.2",
     "morgan": "1.5.2",
+    "request": "2.55.0",
     "serve-favicon": "2.2.0"
   }
 }
