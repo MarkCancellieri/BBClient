@@ -1,4 +1,5 @@
-<div>Subject: {{{post.subject}}}</div>
-<div>Author: {{post.author.fullName}}</div>
-<div>Posted: {{post.created}}</div>
-<div>Body: {{{post.body}}}</div>
+<div><B>Subject:</B> {{{post.subject}}}</div>
+<div><B>Author:</B> {{post.author.fullName}}</div>
+<div><B>Posted:</B> {{formatDate post.created "%B %e, %Y %-l:%M%p"}}</div>
+<div><B>Body:</B></div>
+<div>{{{post.body}}}</div>

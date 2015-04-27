@@ -10,7 +10,7 @@ module.exports = [
       'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
       'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
       'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1001',
     subject: 'Alligators will bite you because they are ornery.',
@@ -23,7 +23,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1002',
     subject: 'Where can I get a pet baboon?',
@@ -36,7 +36,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 101
+    boardId: {_id: '101', name: 'Baboon'}
   },
   { _id: '1003',
     subject: 'RE: Where can I get a pet baboon?',
@@ -49,7 +49,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 101
+    boardId: {_id: '101', name: 'Baboon'}
   },
   { _id: '1004',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -62,7 +62,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1005',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -75,7 +75,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1006',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -88,7 +88,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1007',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -101,7 +101,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1008',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -114,7 +114,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1009',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -127,7 +127,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1010',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -140,7 +140,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1011',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -153,7 +153,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1012',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -166,7 +166,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1013',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -179,7 +179,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1014',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -192,7 +192,7 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   },
   { _id: '1015',
     subject: 'RE: Alligators will bite you because they are ornery.',
@@ -205,6 +205,6 @@ module.exports = [
     'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla ' +
     'pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ' +
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
-    boardId: 100
+    boardId: {_id: '100', name: 'Alligator'}
   }
 ];

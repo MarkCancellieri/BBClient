@@ -3,66 +3,26 @@
 // Module dependencies
 var postsList = require('../../../app_api/posts-list');
 
-var getPosts = function(req, res, page, limit) {
+var getPostById = function(req, res) {
   var postsCount = postsList.length;
-  var boardId = parseInt(req.params.boardId);
-  var matchingPosts = [];
+  var postId = req.params.postId;
+  var matchingPost;
 
   for (var i = 0; i < postsCount; i++) {
-    if (postsList[i].boardId === boardId) {
-      matchingPosts.push(postsList[i]);
+    if (postsList[i]._id === postId) {
+      matchingPost = postsList[i];
+      return matchingPost;
     }
   }
-
-  var pageCount = Math.ceil(matchingPosts.length / limit);
-
-  // Set page to last page if greater than total number of pages
-  page = (page > pageCount) ? pageCount : page;
-
-  var startIndex = (page - 1) * limit;
-  var endIndex = (page - 1) * limit + limit;
-  var postsData = {};
-
-  postsData.pageCount = pageCount;
-  postsData.posts = matchingPosts.slice(startIndex, endIndex);
-
-  return postsData;
-};
-
-var getPageLinks = function(req, res, page, limit, postsData) {
-  var pageLinks = [];
-  for (var i = 1; i <= postsData.pageCount; i++) {
-    pageLinks[i-1] = {};
-    pageLinks[i-1].pageNumber = i;
-    pageLinks[i-1].pageLink = req.path + '?page=' + i + '&limit=' + limit;
-    if (page === i) {
-      pageLinks[i-1].pageClass = 'active';
-    }
-  }
-
-  return pageLinks;
 };
 
 // Get a post
 var getPost = function(req, res){
-  var page = parseInt(req.query.page);
-  var limit = parseInt(req.query.limit);
-  var postsData = getPosts(req, res, page, limit);
-  var pageLinks = getPageLinks(req, res, page, limit, postsData);
+  var post = getPostById(req, res);
 
-  if (res.locals.paginate.hasPreviousPages) {
-    var previousLink = res.locals.paginate.href(true);
-  }
-  if (res.locals.paginate.hasNextPages(postsData.pageCount)) {
-    var nextLink = res.locals.paginate.href(false);
-  }
-
-  res.render('server.views.posts.posts-list.hbs', {
-    pageName: 'Home',
-    posts: postsData.posts,
-    previousLink: previousLink,
-    nextLink: nextLink,
-    pageLinks: pageLinks
+  res.render('server.views.posts.display-post.hbs', {
+    pageName: 'Posts',
+    post: post
   });
 };
 

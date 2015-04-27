@@ -5,11 +5,11 @@ var postsList = require('../../../app_api/posts-list');
 
 var getPosts = function(req, res, page, limit) {
   var postsCount = postsList.length;
-  var boardId = parseInt(req.params.boardId);
+  var boardId = req.params.boardId;
   var matchingPosts = [];
 
   for (var i = 0; i < postsCount; i++) {
-    if (postsList[i].boardId === boardId) {
+    if (postsList[i].boardId._id === boardId) {
       matchingPosts.push(postsList[i]);
     }
   }
