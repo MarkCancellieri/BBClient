@@ -1,8 +1,8 @@
 'use strict';
 
 // Module dependencies
-var handlebars  = require('express-handlebars');
-var helpers     = require('./config.template-engine.helpers');
+var handlebars = require('express-handlebars');
+var helpers = require('./config.template-engine.helpers');
 
 module.exports = function(app) {
   var viewsPath = './app_server/views';

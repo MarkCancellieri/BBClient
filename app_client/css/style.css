@@ -1,13 +1,13 @@
 body {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .author {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .post-title {
-    padding: 0;
+  padding: 0;
 }

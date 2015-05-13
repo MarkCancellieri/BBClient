@@ -1,11 +1,11 @@
 'use strict';
 
 // Module dependencies
-var request     = require('request');
-var config      = require('../../../config/config');
+var request = require('request');
+var config = require('../../../config/config');
 
 // API options object - e.g. {server: 'http://localhost:4242'}
-var apiOptions  = config.apiOptions;
+var apiOptions = config.apiOptions;
 
 var getPageLinks = function(req, res, page, limit, boardsData) {
   var pageLinks = [];
@@ -22,7 +22,7 @@ var getPageLinks = function(req, res, page, limit, boardsData) {
 };
 
 var getListOfBoards = function(req, res, next){
-  var page  = parseInt(req.query.page);
+  var page = parseInt(req.query.page);
   var limit = parseInt(req.query.limit);
   var path = '/api/boards';
   var requestOptions = {
@@ -36,19 +36,21 @@ var getListOfBoards = function(req, res, next){
   };
 
   request(requestOptions, function (err, response, body) {
+    var previousLink, nextLink, pageLinks;
+
     if (err) {
       next(err);
     } else {
       // Get the link to go to the previous page
       if (res.locals.paginate.hasPreviousPages) {
-        var previousLink = res.locals.paginate.href(true);
+        previousLink = res.locals.paginate.href(true);
       }
       // Get the link to go to the next page
       if (res.locals.paginate.hasNextPages(body.pageCount)) {
-        var nextLink = res.locals.paginate.href(false);
+        nextLink = res.locals.paginate.href(false);
       }
       // Get the links for the page numbers
-      var pageLinks = getPageLinks(req, res, page, limit, body);
+      pageLinks = getPageLinks(req, res, page, limit, body);
 
       res.render('server.views.boards.boards-list.hbs', {
         pageName: 'Home',

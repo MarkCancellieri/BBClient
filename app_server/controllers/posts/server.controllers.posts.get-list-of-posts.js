@@ -49,12 +49,13 @@ var getListOfPosts = function(req, res){
   var limit = parseInt(req.query.limit);
   var postsData = getPosts(req, res, page, limit);
   var pageLinks = getPageLinks(req, res, page, limit, postsData);
+  var previousLink, nextLink;
 
   if (res.locals.paginate.hasPreviousPages) {
-    var previousLink = res.locals.paginate.href(true);
+    previousLink = res.locals.paginate.href(true);
   }
   if (res.locals.paginate.hasNextPages(postsData.pageCount)) {
-    var nextLink = res.locals.paginate.href(false);
+    nextLink = res.locals.paginate.href(false);
   }
 
   res.render('server.views.posts.posts-list.hbs', {

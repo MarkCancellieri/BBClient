@@ -1,0 +1,8 @@
+{
+  // Enforcing
+  "indent": 2,
+
+  // Environments
+  "mocha": true,
+  "node": true
+}

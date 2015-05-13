@@ -1,10 +1,10 @@
 'use strict';
 
 // Module dependencies
-var express           = require('express');
-var router            = express.Router();
-var boardsController  = require('../controllers/server.controllers.boards.js');
-var postsController   = require('../controllers/server.controllers.posts.js');
+var express = require('express');
+var router = express.Router();
+var boardsController = require('../controllers/server.controllers.boards.js');
+var postsController = require('../controllers/server.controllers.posts.js');
 
 // Home page
 router.get('/', boardsController.getListOfBoards);
