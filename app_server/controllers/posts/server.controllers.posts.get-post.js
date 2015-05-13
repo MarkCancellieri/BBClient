@@ -5,7 +5,7 @@ var postsList = require('../../../app_api/posts-list');
 
 var getPostById = function(req, res) {
   var postsCount = postsList.length;
-  var postId = req.params.postId;
+  var postId     = req.params.postId;
   var matchingPost;
 
   for (var i = 0; i < postsCount; i++) {

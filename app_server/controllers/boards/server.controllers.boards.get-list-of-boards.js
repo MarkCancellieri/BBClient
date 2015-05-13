@@ -2,7 +2,7 @@
 
 // Module dependencies
 var request = require('request');
-var config = require('../../../config/config');
+var config  = require('../../../config/config');
 
 // API options object - e.g. {server: 'http://localhost:4242'}
 var apiOptions = config.apiOptions;
@@ -22,9 +22,9 @@ var getPageLinks = function(req, res, page, limit, boardsData) {
 };
 
 var getListOfBoards = function(req, res, next){
-  var page = parseInt(req.query.page);
+  var page  = parseInt(req.query.page);
   var limit = parseInt(req.query.limit);
-  var path = '/api/boards';
+  var path  = '/api/boards';
   var requestOptions = {
     url: apiOptions.server + path,
     method: 'GET',
@@ -53,11 +53,11 @@ var getListOfBoards = function(req, res, next){
       pageLinks = getPageLinks(req, res, page, limit, body);
 
       res.render('server.views.boards.boards-list.hbs', {
-        pageName: 'Home',
-        boards: body.boards,
-        previousLink: previousLink,
-        nextLink: nextLink,
-        pageLinks: pageLinks,
+        pageName:      'Home',
+        boards:        body.boards,
+        previousLink:  previousLink,
+        nextLink:      nextLink,
+        pageLinks:     pageLinks,
         userFirstName: req.user ? req.user.firstName : ''
       });
     }

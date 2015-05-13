@@ -2,5 +2,5 @@
 
 module.exports = {
   getListOfPosts: require('./posts/server.controllers.posts.get-list-of-posts'),
-  getPost: require('./posts/server.controllers.posts.get-post')
+  getPost:        require('./posts/server.controllers.posts.get-post')
 };

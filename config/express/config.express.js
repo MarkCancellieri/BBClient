@@ -1,8 +1,8 @@
 'use strict';
 
 // Module dependencies
-var express = require('express');
-var config = require('../config');
+var express    = require('express');
+var config     = require('../config');
 var middleware = require('../middleware/config.middleware');
 
 // Define the Express configuration function

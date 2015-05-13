@@ -4,8 +4,8 @@
 var postsList = require('../../../app_api/posts-list');
 
 var getPosts = function(req, res, page, limit) {
-  var postsCount = postsList.length;
-  var boardId = req.params.boardId;
+  var postsCount    = postsList.length;
+  var boardId       = req.params.boardId;
   var matchingPosts = [];
 
   for (var i = 0; i < postsCount; i++) {
@@ -20,11 +20,11 @@ var getPosts = function(req, res, page, limit) {
   page = (page > pageCount) ? pageCount : page;
 
   var startIndex = (page - 1) * limit;
-  var endIndex = (page - 1) * limit + limit;
-  var postsData = {};
+  var endIndex   = (page - 1) * limit + limit;
+  var postsData  = {};
 
   postsData.pageCount = pageCount;
-  postsData.posts = matchingPosts.slice(startIndex, endIndex);
+  postsData.posts     = matchingPosts.slice(startIndex, endIndex);
 
   return postsData;
 };
@@ -45,8 +45,8 @@ var getPageLinks = function(req, res, page, limit, postsData) {
 
 // Get a list of posts
 var getListOfPosts = function(req, res){
-  var page = parseInt(req.query.page);
-  var limit = parseInt(req.query.limit);
+  var page      = parseInt(req.query.page);
+  var limit     = parseInt(req.query.limit);
   var postsData = getPosts(req, res, page, limit);
   var pageLinks = getPageLinks(req, res, page, limit, postsData);
   var previousLink, nextLink;
@@ -59,11 +59,11 @@ var getListOfPosts = function(req, res){
   }
 
   res.render('server.views.posts.posts-list.hbs', {
-    pageName: 'Home',
-    posts: postsData.posts,
+    pageName:     'Home',
+    posts:        postsData.posts,
     previousLink: previousLink,
-    nextLink: nextLink,
-    pageLinks: pageLinks
+    nextLink:     nextLink,
+    pageLinks:    pageLinks
   });
 };
 
