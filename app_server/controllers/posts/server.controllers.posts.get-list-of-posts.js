@@ -31,12 +31,15 @@ var getPosts = function(req, res, page, limit) {
 
 var getPageLinks = function(req, res, page, limit, postsData) {
   var pageLinks = [];
+  var pageIndex;
+
   for (var i = 1; i <= postsData.pageCount; i++) {
-    pageLinks[i-1] = {};
-    pageLinks[i-1].pageNumber = i;
-    pageLinks[i-1].pageLink = req.path + '?page=' + i + '&limit=' + limit;
+    pageIndex = i - 1;
+    pageLinks[pageIndex] = {};
+    pageLinks[pageIndex].pageNumber = i;
+    pageLinks[pageIndex].pageLink = req.path + '?page=' + i + '&limit=' + limit;
     if (page === i) {
-      pageLinks[i-1].pageClass = 'active';
+      pageLinks[pageIndex].pageClass = 'active';
     }
   }
 
@@ -44,12 +47,13 @@ var getPageLinks = function(req, res, page, limit, postsData) {
 };
 
 // Get a list of posts
-var getListOfPosts = function(req, res){
-  var page      = parseInt(req.query.page);
-  var limit     = parseInt(req.query.limit);
-  var postsData = getPosts(req, res, page, limit);
-  var pageLinks = getPageLinks(req, res, page, limit, postsData);
-  var previousLink, nextLink;
+var getListOfPosts = function(req, res) {
+  var page         = parseInt(req.query.page);
+  var limit        = parseInt(req.query.limit);
+  var postsData    = getPosts(req, res, page, limit);
+  var pageLinks    = getPageLinks(req, res, page, limit, postsData);
+  var previousLink;
+  var nextLink;
 
   if (res.locals.paginate.hasPreviousPages) {
     previousLink = res.locals.paginate.href(true);
@@ -59,11 +63,11 @@ var getListOfPosts = function(req, res){
   }
 
   res.render('server.views.posts.posts-list.hbs', {
-    pageName:     'Home',
-    posts:        postsData.posts,
-    previousLink: previousLink,
-    nextLink:     nextLink,
-    pageLinks:    pageLinks
+    pageName     : 'Home',
+    posts        : postsData.posts,
+    previousLink : previousLink,
+    nextLink     : nextLink,
+    pageLinks    : pageLinks
   });
 };
 

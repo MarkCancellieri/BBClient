@@ -1,5 +1,6 @@
 module.exports = [
-  { _id: '1000',
+  {
+    _id: '1000',
     subject: 'Alligators are cool',
     author: {fullName: 'Joe Shmo'},
     created: '2015-04-14T20:08:26.845Z',
@@ -12,7 +13,8 @@ module.exports = [
       'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1001',
+  {
+    _id: '1001',
     subject: 'Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -25,7 +27,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1002',
+  {
+    _id: '1002',
     subject: 'Where can I get a pet baboon?',
     author: {fullName: 'Jane Doe'},
     created: '2015-04-14T20:14:11.014Z',
@@ -38,7 +41,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '101', name: 'Baboon'}
   },
-  { _id: '1003',
+  {
+    _id: '1003',
     subject: 'RE: Where can I get a pet baboon?',
     author: {fullName: 'Joe Shmo'},
     created: '2015-04-19T13:56:53.368Z',
@@ -51,7 +55,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '101', name: 'Baboon'}
   },
-  { _id: '1004',
+  {
+    _id: '1004',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -64,7 +69,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1005',
+  {
+    _id: '1005',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -77,7 +83,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1006',
+  {
+    _id: '1006',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -90,7 +97,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1007',
+  {
+    _id: '1007',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -103,7 +111,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1008',
+  {
+    _id: '1008',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -116,7 +125,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1009',
+  {
+    _id: '1009',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -129,7 +139,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1010',
+  {
+    _id: '1010',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -142,7 +153,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1011',
+  {
+    _id: '1011',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -155,7 +167,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1012',
+  {
+    _id: '1012',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -168,7 +181,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1013',
+  {
+    _id: '1013',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -181,7 +195,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1014',
+  {
+    _id: '1014',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',
@@ -194,7 +209,8 @@ module.exports = [
     'culpa qui officia deserunt mollit anim id est laborum.</p>',
     boardId: {_id: '100', name: 'Alligator'}
   },
-  { _id: '1015',
+  {
+    _id: '1015',
     subject: 'RE: Alligators will bite you because they are ornery.',
     author: {fullName: 'Johnny Johnson'},
     created: '2015-04-14T20:12:40.925Z',

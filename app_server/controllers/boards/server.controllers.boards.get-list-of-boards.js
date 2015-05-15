@@ -9,19 +9,22 @@ var apiOptions = config.apiOptions;
 
 var getPageLinks = function(req, res, page, limit, boardsData) {
   var pageLinks = [];
+  var pageIndex;
+
   for (var i = 1; i <= boardsData.pageCount; i++) {
-    pageLinks[i-1] = {};
-    pageLinks[i-1].pageNumber = i;
-    pageLinks[i-1].pageLink = req.path + '?page=' + i + '&limit=' + limit;
+    pageIndex = i - 1;
+    pageLinks[pageIndex] = {};
+    pageLinks[pageIndex].pageNumber = i;
+    pageLinks[pageIndex].pageLink = req.path + '?page=' + i + '&limit=' + limit;
     if (page === i) {
-      pageLinks[i-1].pageClass = 'active';
+      pageLinks[pageIndex].pageClass = 'active';
     }
   }
 
   return pageLinks;
 };
 
-var getListOfBoards = function(req, res, next){
+var getListOfBoards = function(req, res, next) {
   var page  = parseInt(req.query.page);
   var limit = parseInt(req.query.limit);
   var path  = '/api/boards';
@@ -35,8 +38,10 @@ var getListOfBoards = function(req, res, next){
     }
   };
 
-  request(requestOptions, function (err, response, body) {
-    var previousLink, nextLink, pageLinks;
+  request(requestOptions, function(err, response, body) {
+    var previousLink;
+    var nextLink;
+    var pageLinks;
 
     if (err) {
       next(err);
@@ -53,12 +58,12 @@ var getListOfBoards = function(req, res, next){
       pageLinks = getPageLinks(req, res, page, limit, body);
 
       res.render('server.views.boards.boards-list.hbs', {
-        pageName:      'Home',
-        boards:        body.boards,
-        previousLink:  previousLink,
-        nextLink:      nextLink,
-        pageLinks:     pageLinks,
-        userFirstName: req.user ? req.user.firstName : ''
+        pageName      : 'Home',
+        boards        : body.boards,
+        previousLink  : previousLink,
+        nextLink      : nextLink,
+        pageLinks     : pageLinks,
+        userFirstName : req.user ? req.user.firstName : ''
       });
     }
   });
